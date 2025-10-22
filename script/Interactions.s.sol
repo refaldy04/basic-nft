@@ -10,10 +10,12 @@ contract MintBasicNFT is Script {
         "ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json";
 
     function run() external {
-        address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment(
-            "BasicNFT",
-            block.chainid
-        );
+        address mostRecentlyDeployed = 0xe1211ad1D868ecb93f3174AF4bA105f7d8C5e198;
+        // does not work on CI/CD for now
+        // address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment(
+        //     "BasicNFT",
+        //     block.chainid
+        // );
 
         mintNftOnContract(mostRecentlyDeployed);
     }
